@@ -5,6 +5,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
 import { Buffer } from 'buffer';
+import Transactions from "./Transactions";
 global.Buffer = Buffer;
 
 const companyCommonStyles = "min-h-[70px] sm:px-0 px-2 sm:min-w-[120px] flex justify-center items-center border-[0.5px] border-gray-400 text-sm font-light text-white";
@@ -71,7 +72,7 @@ const Welcome = () => {
             alert(`Sent ${amountInSOL} SOL to ${toAddress}`);
             setToAddress(""); // Clear input after successful transaction
             setAmount(""); // Clear input after successful transaction
-            await getBalance(); // Refresh balance
+            // await getBalance(); // Refresh balance
         } catch (error) {
             console.error("Transaction error:", error);
             alert("Transaction failed: " + error.message);
@@ -143,6 +144,7 @@ const Welcome = () => {
                 </div>
             </div>
         </div>
+        
     );
 };
 

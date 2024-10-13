@@ -1,7 +1,7 @@
 import './App.css';
 import { Navbar,Welcome,Transactions,Services } from './components';
 import React, { useMemo } from 'react';
-import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { ConnectionProvider, useWallet, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 import {
     WalletModalProvider,
@@ -27,7 +27,7 @@ function App() {
                     <Welcome />
                   </div>
                   <Services />
-                  <Transactions />
+                  <Transactions  />
               </div>
               </WalletModalProvider>
           </WalletProvider>
