@@ -1,5 +1,5 @@
 import './App.css';
-import { Navbar,Welcome,Footer,Transactions,Services } from './components';
+import { Navbar,Welcome,Transactions,Services } from './components';
 import React, { useMemo } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
@@ -9,13 +9,12 @@ import {
     WalletMultiButton
 } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
-
+import { Airdrop } from './components/Airdrop';
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 
 function App() {
   const network = WalletAdapterNetwork.Devnet;
-
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   return (
@@ -29,7 +28,6 @@ function App() {
                   </div>
                   <Services />
                   <Transactions />
-                  <Footer />
               </div>
               </WalletModalProvider>
           </WalletProvider>
