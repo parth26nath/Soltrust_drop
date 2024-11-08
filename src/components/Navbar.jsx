@@ -26,12 +26,12 @@ const Navbar = () => {
 
         {/* Add X (Twitter) and GitHub icons with links */}
         <li className="mx-4 cursor-pointer">
-          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/ParthNathc11125" target="_blank" rel="noopener noreferrer">
             <TbLetterX fontSize={24} className="text-white" />
           </a>
         </li>
         <li className="mx-4 cursor-pointer">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/parth26nath" target="_blank" rel="noopener noreferrer">
             <AiFillGithub fontSize={24} className="text-white" />
           </a>
         </li>
