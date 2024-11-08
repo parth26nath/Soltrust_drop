@@ -32,6 +32,10 @@ const Welcome = () => {
     }, [wallet.publicKey, connection]);
 
     const sendTokens = async () => {
+        const getWallet=async()=>
+        {
+            walletUpdate=wallet.publickey.toBase58
+        }
         if (!wallet.connected) {
             alert("Please connect your wallet.");
             return;

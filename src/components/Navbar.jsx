@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { HiMenuAlt4 } from "react-icons/hi";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiFillGithub } from "react-icons/ai";
+import { TbLetterX } from "react-icons/tb";  // Import X icon
 import logo from '../Images/logo.png';
-import {
-    WalletDisconnectButton,
-    
-} from '@solana/wallet-adapter-react-ui';
+import { WalletDisconnectButton } from '@solana/wallet-adapter-react-ui';
+
 const NavBarItem = ({ title, classprops }) => (
   <li className={`mx-4 cursor-pointer ${classprops}`}>{title}</li>
 );
@@ -24,8 +23,20 @@ const Navbar = () => {
         ))}
         
         <WalletDisconnectButton />
-          
+
+        {/* Add X (Twitter) and GitHub icons with links */}
+        <li className="mx-4 cursor-pointer">
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <TbLetterX fontSize={24} className="text-white" />
+          </a>
+        </li>
+        <li className="mx-4 cursor-pointer">
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+            <AiFillGithub fontSize={24} className="text-white" />
+          </a>
+        </li>
       </ul>
+
       <div className="flex relative">
         {!toggleMenu && (
           <HiMenuAlt4 fontSize={28} className="text-white md:hidden cursor-pointer" onClick={() => setToggleMenu(true)} />
@@ -42,6 +53,18 @@ const Navbar = () => {
             {["Market", "Exchange", "Tutorials", "Wallets"].map(
               (item, index) => <NavBarItem key={item + index} title={item} classprops="my-2 text-lg" />,
             )}
+            {/* Add X (Twitter) and GitHub icons in the mobile menu */}
+            <li className="my-2 text-lg">
+              <a href="https://x.com/ParthNathc11125" target="_blank" rel="noopener noreferrer">
+              <TbLetterX fontSize={28} className="text-white font-extrabold" />
+
+              </a>
+            </li>
+            <li className="my-2 text-lg">
+              <a href="https://github.com/parth26nath" target="_blank" rel="noopener noreferrer">
+                <AiFillGithub fontSize={24} className="text-white" />
+              </a>
+            </li>
           </ul>
         )}
       </div>
